@@ -1,11 +1,11 @@
-const { Builder, By, Capabilities, until } = require("selenium-webdriver");
+const { Builder, By, until } = require("selenium-webdriver");
 
 const {
   handleCheckboxes,
   handleRadioInputsInSpan,
   handleRadioInputsInTable,
   handleTextInputs
-} = require("./Scrappers/Inputs");
+} = require("./scrappers/Inputs");
 
 const { handleSelects } = require("./scrappers/Selects");
 
