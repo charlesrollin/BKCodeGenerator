@@ -5,11 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "standard-changelog && git add ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "standard-changelog": "^2.0.6"
   }
 }
