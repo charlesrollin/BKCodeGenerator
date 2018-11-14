@@ -1,6 +1,6 @@
 {
   "name": "bkcodegenerator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A script that automatically retrieves a free-burger code from BK",
   "main": "index.js",
   "scripts": {
