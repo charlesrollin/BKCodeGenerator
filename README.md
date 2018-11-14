@@ -19,7 +19,7 @@ npm install
 
 Run the script:
 ```bash
-npm start
+npm start [BKCode] # code of a BK store, defaults to BK21017
 ```
 
 ## Known issues

@@ -1,6 +1,7 @@
 const { Builder, By, until } = require("selenium-webdriver");
 
 const {
+  setBKCode,
   handleCheckboxes,
   handleRadioInputsInSpan,
   handleRadioInputsInTable,
@@ -9,9 +10,12 @@ const {
 
 const { handleSelects } = require("./scrappers/Selects");
 
-async function example() {
+async function example(bkCode) {
+  if (bkCode) {
+    setBKCode(bkCode);
+  }
   const stdin = process.stdin;
-  let driver = await new Builder().forBrowser('safari').build();
+  let driver = await new Builder().forBrowser("safari").build();
   await driver.manage().setTimeouts({ implicit: 5000 });
   let keepGoing = true;
   let stepCount = 0;
@@ -51,7 +55,7 @@ async function goToNextStep(driver) {
 }
 
 async function getCodeString(driver) {
-  return await driver.findElement(By.className('ValCode')).getText();
+  return await driver.findElement(By.className("ValCode")).getText();
 }
 
 async function handleStep(driver) {
@@ -64,4 +68,4 @@ async function handleStep(driver) {
   return await goToNextStep(driver);
 }
 
-example();
+example(...process.argv.slice(2));

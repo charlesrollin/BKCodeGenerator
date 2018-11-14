@@ -1,5 +1,11 @@
 const { By } = require("selenium-webdriver");
 
+// Default BK Code
+let bkCode = "21018";
+function setBKCode(code) {
+  bkCode = code;
+}
+
 async function handleNestedRadioInputs(
   driver,
   parentCondition,
@@ -53,7 +59,7 @@ async function handleRadioInputsInTable(driver, interact = true) {
 function textForTextInput(name) {
   switch (name) {
     case "SurveyCode":
-      return "21018";
+      return bkCode;
     default:
       return "texte par défaut";
   }
@@ -113,6 +119,7 @@ async function handleCheckboxes(driver, interact = true) {
 }
 
 module.exports = {
+  setBKCode,
   handleCheckboxes,
   handleRadioInputsInSpan,
   handleRadioInputsInTable,
