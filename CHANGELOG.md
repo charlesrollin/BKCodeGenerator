@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/CRollin/BKCodeGenerator/compare/v0.2.0...v0.3.0) (2018-11-15)
+
+
+### Features
+
+* **options:** allow to choose between slow and fast mode ([736a770](https://github.com/CRollin/BKCodeGenerator/commit/736a770))
+
+
+
 # [0.2.0](https://github.com/CRollin/BKCodeGenerator/compare/v0.1.0...v0.2.0) (2018-11-14)
 
 
