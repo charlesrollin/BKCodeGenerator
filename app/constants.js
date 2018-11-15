@@ -1,5 +1,7 @@
 const MILLIS_PER_DAY = 86400000;
 
-module.exports = {
-  MILLIS_PER_DAY
+const Constants = {
+    MILLIS_PER_DAY,
 };
+
+export default Constants;

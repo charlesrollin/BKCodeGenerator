@@ -1,0 +1,76 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "array-callback-return": "error",
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "comma-dangle": ["error", "always-multiline"],
+
+    "id-length": [
+      "error",
+      {
+        "exceptions": ["_"]
+      }
+    ],
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "newline-per-chained-call": [
+      "error",
+      {
+        "ignoreChainWithDepth": 2
+      }
+    ],
+    "no-confusing-arrow": "warn",
+    "no-magic-numbers": [
+      "error",
+      {
+        "ignoreArrayIndexes": true,
+        "ignore": [-1, 0, 1, 100, 1000, 3600]
+      }
+    ],
+    "no-param-reassign": "error",
+    "no-extra-semi": "warn",
+    "no-plusplus": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "all",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "_*|req|res|next"
+      }
+    ],
+    "no-var": "error",
+    "object-shorthand": [
+      "error",
+      "always",
+      {
+        "avoidQuotes": true
+      }
+    ],
+    "prefer-arrow-callback": "error",
+    "prefer-rest-params": "warn",
+    "prefer-spread": "warn",
+    "semi": [2, "always"],
+    "valid-jsdoc": "warn",
+    "vars-on-top": "error"
+  }
+}
