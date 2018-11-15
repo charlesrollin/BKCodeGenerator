@@ -41,3 +41,9 @@ npm start [BKCode] # code of a BK store, defaults to BK21017
 It seems that Selenium needs to keep its browser window in the active desktop to work.
 
 Leaving the desktop in which this script is running will cause a `ScriptTimeoutError` and will terminate the program.
+
+## Disclaimer
+
+*BKCodeGenerator* provided by *CRollin* is for illustrative purposes only which provides customers with programming information regarding the products. This software is supplied "AS IS" without any warranties and support.
+
+I assume no responsibility or liability for the use of the software, convey no license or title under any patent, copyright, or mask work right to the product.
