@@ -1,4 +1,5 @@
-const MILLIS_PER_DAY = 86400000;
+// @flow
+const MILLIS_PER_DAY: number = 86400000;
 
 const Constants = {
     MILLIS_PER_DAY,

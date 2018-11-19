@@ -1,6 +1,7 @@
+// @flow
 const { By } = require("selenium-webdriver");
 
-export async function handleSelects(driver, interact = true) {
+export async function handleSelects(driver: *, interact: boolean = true) {
     const optionsPerSelectId = {};
     const selects = await driver.findElements(By.tagName("select"));
     await Promise.all(

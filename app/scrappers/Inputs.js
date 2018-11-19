@@ -1,15 +1,16 @@
+// @flow
 const { By } = require("selenium-webdriver");
 
 // Default BK Code
-let bkCode = "21018";
-export function setBKCode(code) {
+let bkCode: string = "21018";
+export function setBKCode(code: string) {
     bkCode = code;
 }
 
 async function handleNestedRadioInputs(
     driver,
     parentCondition,
-    interact = true
+    interact: boolean = true
 ) {
     const inputsPerName = {};
     const inputs = await driver.findElements(parentCondition);
@@ -44,7 +45,7 @@ async function handleNestedRadioInputs(
     }
 }
 
-export async function handleRadioInputsInSpan(driver, interact = true) {
+export async function handleRadioInputsInSpan(driver: *, interact: boolean = true) {
     await handleNestedRadioInputs(
         driver,
         By.className("radioButtonHolder"),
@@ -52,7 +53,7 @@ export async function handleRadioInputsInSpan(driver, interact = true) {
     );
 }
 
-export async function handleRadioInputsInTable(driver, interact = true) {
+export async function handleRadioInputsInTable(driver: *, interact: boolean = true) {
     await handleNestedRadioInputs(
         driver,
         By.className("inputtyperbloption"),
@@ -60,7 +61,7 @@ export async function handleRadioInputsInTable(driver, interact = true) {
     );
 }
 
-function textForTextInput(name) {
+function textForTextInput(name: string) {
     switch (name) {
         case "SurveyCode":
             return bkCode;
@@ -69,7 +70,7 @@ function textForTextInput(name) {
     }
 }
 
-export async function handleTextInputs(driver, interact = true) {
+export async function handleTextInputs(driver: *, interact: boolean = true) {
     const textInputsByName = {};
     const inputs = await driver.findElements(By.css("input[type='text']"));
     await Promise.all(
@@ -90,7 +91,7 @@ export async function handleTextInputs(driver, interact = true) {
         );
     }
 }
-export async function handleCheckboxes(driver, interact = true) {
+export async function handleCheckboxes(driver: *, interact: boolean = true) {
     const inputsPerName = {};
     const inputs = await driver.findElements(By.className("checkboxholder"));
     await Promise.all(

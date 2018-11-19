@@ -1,3 +1,4 @@
+// @flow
 import { Builder, By, until } from "selenium-webdriver";
 import minimist from "minimist";
 
@@ -13,7 +14,7 @@ import { handleSelects } from "./scrappers/Selects";
 
 const STALENESS_TIMEOUT = 10000;
 
-async function goToNextStep(driver) {
+async function goToNextStep(driver): Promise<boolean> {
     const validateButtons = await driver.findElements(By.id("NextButton"));
     const hasNextStep = validateButtons.length > 0;
     if (hasNextStep) {
@@ -26,11 +27,11 @@ async function goToNextStep(driver) {
     return hasNextStep;
 }
 
-async function getCodeString(driver) { 
+async function getCodeString(driver): Promise<string> { 
     return driver.findElement(By.className("ValCode")).getText();
 }
 
-async function handleStep(driver, isSlowMode) {
+async function handleStep(driver, isSlowMode: boolean): Promise<boolean> {
     if (isSlowMode) {
         await handleRadioInputsInSpan(driver);
         await handleRadioInputsInTable(driver);
@@ -42,7 +43,7 @@ async function handleStep(driver, isSlowMode) {
     return goToNextStep(driver);
 }
 
-async function example(bkCode, slowMode) {
+async function example(bkCode: string, slowMode: boolean) {
     const startDate = Date.now();
     if (bkCode) {
         setBKCode(bkCode);
